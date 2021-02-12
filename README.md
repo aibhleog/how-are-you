@@ -9,9 +9,7 @@ To make this work with your `.basrhc`,  you can paste these lines at the end of 
 
 ```
 # moves to dir with script, run it, then returns to home dir
-cd "/path/to/script/"
 python "how-are-you.py"
-cd
 ```
 
 This prompt only happens the first time you open a terminal that day. Every other time you open your terminal that day, you won't see this prompt.
