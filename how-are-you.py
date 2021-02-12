@@ -16,16 +16,17 @@ import pandas as pd
 from datetime import datetime as dt
 import os
 
+path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your own path
 
 # creating date string for today, will look like ex.: 08-Feb-2021
 date = dt.strftime(dt.now(),'%d-%b-%Y')
 
 # first checking file exists (only necessary the first time you run this)
-if os.path.exists('feelings.txt') == False:
-	os.system('touch feelings.txt') # creates file
-	df = pd.read_csv('feelings.txt',sep='\t',names=['feel','date']) # specifying columns
+if os.path.exists(path + 'feelings.txt') == False:
+	os.system(f'touch {path}feelings.txt') # creates file
+	df = pd.read_csv(path + 'feelings.txt',sep='\t',names=['feel','date']) # specifying columns
 else: 
-	df = pd.read_csv('feelings.txt',sep='\t') # don't need to specify cols as they now exist
+	df = pd.read_csv(path + 'feelings.txt',sep='\t') # don't need to specify cols as they now exist
 
 # checking if this has already been run today
 # if it has, nothing happens
@@ -64,7 +65,7 @@ if date not in df.date.values:
 	df = df.append(filler_df,ignore_index=True).copy()
 
 	# saving file
-	df.to_csv('feelings.txt',sep='\t',index=False)
+	df.to_csv(path + 'feelings.txt',sep='\t',index=False)
 
 	os.system("clear") # clears terminal, to make it as if it was never there
 
