@@ -8,7 +8,8 @@ Running the `how-are-you.py` script generates a file called `feelings.txt` which
 To make this work with your `.basrhc`,  you can paste these lines at the end of your `.bashrc`:
 
 ```
-# moves to dir with script, run it, then returns to home dir
+# runs script when the terminal is opened
+# note: script won't prompt you if you've already answered that day
 python "how-are-you.py"
 ```
 
