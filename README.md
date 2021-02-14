@@ -10,7 +10,7 @@ To make this work with your `.basrhc`,  you can paste these lines at the end of 
 ```
 # runs script when the terminal is opened
 # note: script won't prompt you if you've already answered that day
-python "how-are-you.py"
+python "/path/to/script/how-are-you.py"
 ```
 
 This prompt only happens the first time you open a terminal that day. Every other time you open your terminal that day, you won't see this prompt.
