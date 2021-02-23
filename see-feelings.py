@@ -29,7 +29,9 @@ ax = plt.gca() # a quick way to get an axes variable
 
 plt.scatter(df.date,df.feel,s=100,edgecolor='k')
 ax.xaxis.set_major_formatter(md.DateFormatter('%m/%d'))
-ax.minorticks_off()
+ax.xaxis.set_major_locator(md.DayLocator(interval=5))
+ax.minorticks_on()
+ax.yaxis.set_tick_params(which='minor', left=False, right=False)
 
 ax.set_ylim(-0.25,4.25)
 ax.set_yticks([0,1,2,3,4,])
