@@ -21,16 +21,25 @@ path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your 
 # creating date string for today, will look like ex.: 08-Feb-2021
 date = dt.strftime(dt.now(),'%d-%b-%Y')
 
+# boolean varible to mark if already run today
+ran = False
+
 # first checking file exists (only necessary the first time you run this)
 if os.path.exists(path + 'feelings.txt') == False:
 	os.system(f'touch {path}feelings.txt') # creates file
 	df = pd.read_csv(path + 'feelings.txt',sep='\t',names=['feel','date']) # specifying columns
-else: 
-	df = pd.read_csv(path + 'feelings.txt',sep='\t') # don't need to specify cols as they now exist
+else:
+	# orginally, the df was read in here, but as it grows in size this could slow down 
+	# so I wrote this version instead to just get the tail of the dataset every time for the check
+	tail = os.popen(f'tail {path}feelings.txt').read() # writing output to tail
+	lastdate = tail.split('\n')[-2].split('\t')[1] # accesses the last date
+	
+	if lastdate == date: ran = True # don't need to read in feelings.txt
+	else: df = pd.read_csv(path + 'feelings.txt',sep='\t') # don't need to specify cols as they now exist
 
 # checking if this has already been run today
 # if it has, nothing happens
-if date not in df.date.values:
+if ran == False:
 
 	# the prompt
 	print('''
