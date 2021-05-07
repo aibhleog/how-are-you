@@ -27,12 +27,16 @@ feelings = ['bad', 'not the best', 'neutral', "I'm okay", 'good!']
 plt.figure(figsize=(8,3.5))
 ax = plt.gca() # a quick way to get an axes variable
 
-plt.scatter(df.date,df.feel,s=100,edgecolor='k')
-ax.xaxis.set_major_formatter(md.DateFormatter('%m/%d'))
-ax.xaxis.set_major_locator(md.DayLocator(interval=5))
-ax.minorticks_on()
-ax.yaxis.set_tick_params(which='minor', left=False, right=False)
+plt.scatter(df.date,df.feel,c=df.feel,cmap='RdBu',s=100,edgecolor='k') # color-coded
 
+# setting up xaxis
+interval = int(len(df)/5) # should scale with size of dataframe
+ax.xaxis.set_major_formatter(md.DateFormatter('%m/%d'))
+ax.xaxis.set_major_locator(md.DayLocator(interval=interval)) # interval is in days
+ax.minorticks_on()
+
+# yaxis
+ax.yaxis.set_tick_params(which='minor', left=False, right=False)
 ax.set_ylim(-0.25,4.25)
 ax.set_yticks([0,1,2,3,4,])
 ax.set_yticklabels(feelings)
