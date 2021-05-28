@@ -5,10 +5,18 @@ you can see a plot of all of your feelings rankings for each day since you start
 doing it.
 
 This is meant to be something that could help you track over time how your
-overall mental health is doing.
+overall mental health is doing.  Also, we could easily make this code more complex, 
+but as it's only meant to be run once/day, I didn't bother.
 
-Also, we could easily make this code more complex, but as it's only meant to be 
-run once/day, I didn't bother.
+
+|------|
+| NOTE | 
+|------|
+| Make sure the entries you use are phrases you don't say a lot, otherwise they may 
+| skew your answers.  I used to have 3:"I'm okay" and I had to change it because 
+| that's something I say a lot (regardless of how I'm actually doing) and I was 
+| choosing that answer when I shouldn't.
+
 '''
 
 import numpy as np
@@ -50,7 +58,7 @@ if ran == False:
     0 : bad
     1 : not the best
     2 : neutral
-    3 : I'm okay
+    3 : satisfactory
     4 : good!
 
 ===================================================

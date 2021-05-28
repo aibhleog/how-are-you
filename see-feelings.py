@@ -21,7 +21,7 @@ path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your 
 
 # reading in file
 df = pd.read_csv(path + 'feelings.txt',sep='\t')
-feelings = ['bad', 'not the best', 'neutral', "I'm okay", 'good!']
+feelings = ['bad', 'not the best', 'neutral', 'satisfactory', 'good!']
 
 # looking at data
 plt.figure(figsize=(8,3.5))
