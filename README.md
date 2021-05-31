@@ -7,10 +7,26 @@ Running the `how-are-you.py` script generates a file called `feelings.txt` which
 
 To make this work with your `.basrhc`,  you can paste these lines at the end of your `.bashrc`:
 
-```
+```bash
 # runs script when the terminal is opened
 # note: script won't prompt you if you've already answered that day
-python "/path/to/script/how-are-you.py"
+python "/path/to/script/how-are-you/how-are-you.py"
 ```
 
 This prompt only happens the first time you open a terminal that day. Every other time you open your terminal that day, you won't see this prompt.
+
+
+## Other scripts in this repo
+There are two other scripts in this repo that hopefully you'll also find useful!  I'll describe them below.
+
+- `see-feelings.py` -- reads in your `feelings.txt` file and plots up how you've been answering over time.
+- `update-feeling.py` -- allows you to update your feeling entry for the present date (pulls & replaces the value in the last row of the `feelings.txt` file.
+
+I recommend you reference both of these scripts as aliases in your `.bashrc` file!  That way you can run this from your terminal, regardless of location.  Here's how mine look:
+
+```bash
+# alias for showing feelings tracker
+alias feel='python /path/to/script/how-are-you/see-feelings.py'
+# alias for updating feelings entry
+alias newfeel='python /path/to/script/how-are-you/update-feeling.py'
+```
