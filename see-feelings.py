@@ -27,7 +27,7 @@ feelings = ['bad', 'not the best', 'neutral', 'satisfactory', 'good!']
 plt.figure(figsize=(8,3.5))
 ax = plt.gca() # a quick way to get an axes variable
 
-plt.scatter(df.date,df.feel,c=df.feel,cmap='RdBu',s=100,edgecolor='k') # color-coded
+plt.scatter(df.date,df.feel,c=df.feel,cmap='BrBG',s=100,edgecolor='k',rasterized=True) # color-coded
 
 # setting up xaxis
 interval = int(len(df)/5) # should scale with size of dataframe
