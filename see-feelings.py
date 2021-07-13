@@ -46,3 +46,6 @@ plt.savefig(path + 'tracker.png')
 plt.close()
 
 os.system(f'xdg-open {path}tracker.png')
+
+# running other plotting script so that both plots are up-to-date the same way
+os.system(f'python {path}see-hist.py')
