@@ -20,6 +20,7 @@ This prompt only happens the first time you open a terminal that day. Every othe
 There are two other scripts in this repo that hopefully you'll also find useful!  I'll describe them below.
 
 - `see-feelings.py` -- reads in your `feelings.txt` file and plots up how you've been answering over time.
+- `see-hist.py` -- reads in your `feelings.txt` file and plots the entries as a histogram to get idea of how you've answered overall (this script is run at the end of `see-feelings.py`).
 - `update-feeling.py` -- allows you to update your feeling entry for the present date (pulls & replaces the value in the last row of the `feelings.txt` file.
 
 I recommend you reference both of these scripts as aliases in your `.bashrc` file!  That way you can run this from your terminal, regardless of location.  Here's how mine look:
