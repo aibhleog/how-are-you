@@ -17,7 +17,7 @@ This prompt only happens the first time you open a terminal that day. Every othe
 
 
 ## Other scripts in this repo
-There are two other scripts in this repo that hopefully you'll also find useful!  I'll describe them below.
+There are three other scripts in this repo that hopefully you'll also find useful!  I'll describe them below.
 
 - `see-feelings.py` -- reads in your `feelings.txt` file and plots up how you've been answering over time.
 - `see-hist.py` -- reads in your `feelings.txt` file and plots the entries as a histogram to get idea of how you've answered overall (this script is run at the end of `see-feelings.py`).
