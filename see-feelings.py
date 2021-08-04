@@ -23,11 +23,14 @@ path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your 
 df = pd.read_csv(path + 'feelings.txt',sep='\t')
 feelings = ['bad', 'not the best', 'neutral', 'satisfactory', 'good!']
 
+# converting dates to datetime format
+dates = [dt.strptime(df.loc[i,'date'],'%d-%b-%Y') for i in df.index.values]
+
 # looking at data
 plt.figure(figsize=(8,3.5))
 ax = plt.gca() # a quick way to get an axes variable
 
-plt.scatter(df.date,df.feel,c=df.feel,cmap='BrBG',s=100,edgecolor='k',rasterized=True) # color-coded
+plt.scatter(dates,df.feel,c=df.feel,cmap='BrBG',s=100,edgecolor='k',rasterized=True) # color-coded
 
 # setting up xaxis
 interval = int(len(df)/5) # should scale with size of dataframe
