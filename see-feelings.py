@@ -26,8 +26,13 @@ feelings = ['bad', 'not the best', 'neutral', 'satisfactory', 'good!']
 # converting dates to datetime format
 dates = [dt.strptime(df.loc[i,'date'],'%d-%b-%Y') for i in df.index.values]
 
+
+# pre-setting the length of the plot based on # of points
+length = len(df)/20
+if length > 20: length = 20 # will revisit when we have >1yrs worth of data
+
 # looking at data
-plt.figure(figsize=(8,3.5))
+plt.figure(figsize=(length,3.5))
 ax = plt.gca() # a quick way to get an axes variable
 
 plt.scatter(dates,df.feel,c=df.feel,cmap='BrBG',s=100,edgecolor='k',rasterized=True) # color-coded
