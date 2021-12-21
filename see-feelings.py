@@ -30,6 +30,7 @@ dates = [dt.strptime(df.loc[i,'date'],'%d-%b-%Y') for i in df.index.values]
 # pre-setting the length of the plot based on # of points
 length = len(df)/20
 if length > 20: length = 20 # will revisit when we have >1yrs worth of data
+if length < 8: length = 8 # for when you're first starting out
 
 # looking at data
 plt.figure(figsize=(length,3.5))
