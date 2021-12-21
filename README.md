@@ -2,7 +2,7 @@
 
 This project is a small script which, when paired with your `.bashrc`, asks you each day (the first time you open your terminal that day) to rank how you're feeling and logs it. 
 
-Running the `how-are-you.py` script generates a file called `feelings.txt` which is used to store your feelings entries.  For now, I'm not going to upload my `feelings.txt`, for obvious reasons.
+Running the `how-are-you.py` script generates a file called `feelings.txt` which is used to store your feelings entries.  For now, I'm not going to upload my `feelings.txt`, for obvious reasons -- however I've generated a fake feelings list (`random_feelings.txt`) that I used to make example plots (`random_tracker.pdf` & `random_hist.pdf`).
 
 
 To make this work with your `.basrhc`,  you can paste these lines at the end of your `.bashrc`:
@@ -22,8 +22,9 @@ There are three other scripts in this repo that hopefully you'll also find usefu
 - `see-feelings.py` -- reads in your `feelings.txt` file and plots up how you've been answering over time.
 - `see-hist.py` -- reads in your `feelings.txt` file and plots the entries as a histogram to get idea of how you've answered overall (this script is run at the end of `see-feelings.py`).
 - `update-feeling.py` -- allows you to update your feeling entry for the present date (pulls & replaces the value in the last row of the `feelings.txt` file.
+- `generate-fake-feelings.py` -- a quick script I threw together to make `random_feelings.txt` so you can see how the feelings are stored and how they're used in the plots (check out `random_tracker.pdf` & `random_hist.pdf` for plot examples!).
 
-I recommend you reference both of these scripts as aliases in your `.bashrc` file!  That way you can run this from your terminal, regardless of location.  Here's how mine look:
+I recommend you reference both `see-feelings.py` and `update-feelings.py` as aliases in your `.bashrc` file!  That way you can run this from your terminal, regardless of location.  Here's how mine look:
 
 ```bash
 # alias for showing feelings tracker
