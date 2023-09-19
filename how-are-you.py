@@ -24,7 +24,7 @@ import pandas as pd
 from datetime import datetime as dt
 import os
 
-path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your own path
+path = '/Users/tahutch1/code/scratch-code/how-are-you/' # replace with your own path
 
 # creating date string for today, will look like ex.: 08-Feb-2021
 date = dt.strftime(dt.now(),'%d-%b-%Y')
@@ -78,8 +78,8 @@ if ran == False:
 	# -----------------------
 
 	# appending today's answer to table
-	filler_df = pd.DataFrame({'feel':[feel],'date':[date]})
-	df = df.append(filler_df,ignore_index=True).copy()
+	filler_row = [feel,date]
+	df.loc[len(df)] = filler_row # adds new row with info for each column
 
 	# saving file
 	df.to_csv(path + 'feelings.txt',sep='\t',index=False)

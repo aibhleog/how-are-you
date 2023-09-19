@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime as dt
 import os
 
-path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your own path
+path = '/Users/tahutch1/code/scratch-code/how-are-you/' # replace with your own path
 
 # reading in feelings tracker
 df = pd.read_csv(path + 'feelings.txt',sep='\t')

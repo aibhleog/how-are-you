@@ -17,7 +17,7 @@ from datetime import datetime as dt
 import matplotlib.dates as md
 import os
 
-path = '/home/aibhleog/Documents/scratch-code/how-are-you/' # replace with your own path
+path = '/Users/tahutch1/code/scratch-code/how-are-you/' # replace with your own path
 
 # reading in file
 df = pd.read_csv(path + 'feelings.txt',sep='\t')
@@ -40,7 +40,7 @@ plt.scatter(dates,df.feel,c=df.feel,cmap='BrBG',s=100,edgecolor='k',rasterized=T
 
 # setting up xaxis
 interval = int(len(df)/5) # should scale with size of dataframe
-ax.xaxis.set_major_formatter(md.DateFormatter('%m/%d'))
+ax.xaxis.set_major_formatter(md.DateFormatter('%m/%Y'))
 ax.xaxis.set_major_locator(md.DayLocator(interval=interval)) # interval is in days
 ax.minorticks_on()
 
@@ -54,7 +54,8 @@ plt.tight_layout()
 plt.savefig(path + 'tracker.png')
 plt.close()
 
-os.system(f'xdg-open {path}tracker.png')
+# os.system(f'xdg-open {path}tracker.png')
+os.system(f'open {path}tracker.png')
 
 # running other plotting script so that both plots are up-to-date the same way
 os.system(f'python {path}see-hist.py')
