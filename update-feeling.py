@@ -9,7 +9,7 @@ command line.
 import numpy as np
 import pandas as pd
 from datetime import datetime as dt
-import os
+import os, sys
 
 path = '/Users/tahutch1/code/scratch-code/how-are-you/' # replace with your own path
 
@@ -31,15 +31,19 @@ Please input your new feeling update using the ranking below.
     4 : good!
 
 ===================================================
-	''')
+    ''')
 
 # prompting for an update for the latest entry -- the present date
 feel = input("\nEntry update for today:   ")
 try: int(feel)
 except: 
-	print('Need to input an integer from 0-4.')
-	feel = input('Response:  ' )
-
+    print('Need to input an integer from 0-4.')
+    feel = input('Response:  ' )
+    try: feel = int(feel)
+    except: 
+        print('\nKilling script, incorrect entry twice.')
+        sys.exit(0)
+    
 print() # just for spacing
 
 df.loc[len(df)-1,'feel'] = int(feel)
